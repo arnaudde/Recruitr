@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+	{% load static %}
+	<script src="{% static 'recruitr/js/match.js' %}" type="text/javascript"></script>
+	
+{% endblock %}
+
+{% block content %}
+<p> Please match the applicant with a recruiter </p>
+<div class="form-1" > 
+	<ul>
+	List of Skills required for this position:
+
+		{% for skill in skills %}
+		    <li>{{ skill }}</li>
+		{% endfor %}
+	</ul>
+
+	<form action="{% url 'match' id_position id_applicant %}" method="post">
+	    {% csrf_token %}
+	    {{ form.as_p }}
+	    <input type="submit" value="Submit" />
+	</form>
+</div>
+{% endblock %}

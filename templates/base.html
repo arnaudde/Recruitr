@@ -1,0 +1,36 @@
+
+<head>
+	{% load static %}
+	<script type="text/javascript" src='{% static "jquery/dist/jquery.js" %}'></script>
+	<link  rel="stylesheet" href='{% static "bootstrap/dist/css/bootstrap.css" %}'>
+	<link  rel="stylesheet" href='{% static "jquery.datetimepicker.min.css" %}'>
+	<script type="text/javascript" src='{% static "jquery.datetimepicker.full.js" %}'></script>
+	<script type="text/javascript" src='{% static "base.js" %}'></script>
+	<script>var loc = "{{ loc }}";</script>
+	{% block head %}
+	{% endblock %}
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{% url 'home' %}">Awesome & Cie</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active" id="li-home"><a href="{% url 'home' %}">Home</a></li>
+				<li id="li-positions"><a href="{% url 'positions' %}">Positions</a></li>
+				<li id='li-applicants'><a href="{% url 'applicants' %}">Applicants</a></li>
+				<li id="li-admin"><a href="/admin">Admin</a></li>
+			</ul>
+		</div>
+	</nav>
+
+    <div class="content container">
+        <div class="row" style='margin-top:5%'>
+            <div class="col-md-8 col-sm-8 col-xs-8" >
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>

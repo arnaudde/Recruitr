@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block head %}
+<script>var success = "{{ success }}";</script>
+{% load static %}
+	<script src="{% static 'recruitr/js/schedule.js' %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+	<div class="form" >
+		<p style='margin-bottom: 5%'> Please select a schedule for an interview between  {{m.applicant.first_name}} {{m.applicant.last_name}} and {{m.recruiter.first_name}} {{m.recruiter.last_name}} :
+		</p>
+
+		<form action="{% url 'schedule' id_match id_recruiter %}" method="post">
+			    {% csrf_token %}
+			    <p><label for="id_datetime_begin">Datetime begin:</label> <input type="text" name="datetime_begin"  id="id_datetime_begin"></p>
+			    <p><label for="id_datetime_end">Datetime end:</label> <input type="text" name="datetime_end"  id="id_datetime_end"></p>
+			    <input type="submit" value="Submit" />
+		</form>
+	</div>
+	<div class="answer" style='display:none'>
+		<p> A new match has been created for the applicant {{m.applicant.first_name}} {{m.applicant.last_name}} with the recruiter {{m.recruiter.first_name}} {{m.recruiter.last_name}} for the position {{m.applicant.position.name}}</p>
+		<p> An interview is scheduled between {{start}} and {{end}}. <a href='/admin/recruitr/schedule/{{m.schedule.id}}/change/' target='_blank'>  Change schedule </a></p>
+		<p> An event was added in your calendar <a href="{{link}}" target='_blank'>there </a>
+		<p> An email was sent to {{m.recruiter.email}} and {{m.applicant.email}}
+		<p>It is not the right match ? <a href='/admin/recruitr/match/{{m.id}}/change/' target='_blank'>  Change here </a>
+	</div>
+{% endblock %}
