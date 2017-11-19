@@ -17,7 +17,7 @@ The goal of this app is to help the recruitment process for a company and to man
 - In a new terminal tab launch a server for checking the sent emails: 
 python -m smtpd -n -c DebuggingServer localhost:1025
 
-##Dependencies
+## Dependencies
 
 - Django, Django-bower,bower,npm, jquery-datetimepicker,jquery, bootstrap, Google calendar api
 
@@ -38,7 +38,7 @@ HR representatives should be able to:
 - Notification system: send a mail to both recruiter and applicant, AngelList-style
 - Applicant scorecard, to be filled by company members (HR rep filling the application and recruiters) with specific traits such as experience, dynamism, interest in the company. We could have some sort of radar-graph, with an average from every members
 
-##Overview
+## Overview
 
 The project mainly requires admin tasks therefore most of the work of this project is to customize the admin generated automatically by Django. Django is therefore a very good fit for such requirements.
 
@@ -46,7 +46,7 @@ If you are not familiar with the architecture of a Django project or the model v
 
 
 
-#Database
+## Database
 
 The database schema is defined in models.py.
 
@@ -62,7 +62,7 @@ We have one to many links between :
 - Position and Skill 
 - Recruiter and Skill
 
-#Routing
+## Routing
 
 There are  different urls :
 -/recruitr/home
@@ -72,16 +72,16 @@ There are  different urls :
 -/recrutir/position : List of all available positions
 -/admin : Django admin, to administrate all the database
 
-#Forms 
+## Forms 
 
 -RecruiterForm : Form with a selection of the recruiter (sorted in descending order of matching skills)
 -ScheduleForm : Form for interview schedule selection with jquery-datetimepicker
 
-#Admin.py
+## Admin.py
 
 Custom methods to redirect to add matches after adding applicant.
 
-#To do list
+## To do list
 
 -Check if recruiter is available before adding the event (easy : custom validation of the form)
 -Write tests
