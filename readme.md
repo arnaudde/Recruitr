@@ -18,6 +18,7 @@ The goal of this app is to help the recruitment process for a company and to man
 python -m smtpd -n -c DebuggingServer localhost:1025
 
 ##Dependencies
+
 - Django, Django-bower,bower,npm, jquery-datetimepicker,jquery, bootstrap, Google calendar api
 
 ## Requirements
@@ -38,6 +39,7 @@ HR representatives should be able to:
 - Applicant scorecard, to be filled by company members (HR rep filling the application and recruiters) with specific traits such as experience, dynamism, interest in the company. We could have some sort of radar-graph, with an average from every members
 
 ##Overview
+
 The project mainly requires admin tasks therefore most of the work of this project is to customize the admin generated automatically by Django. Django is therefore a very good fit for such requirements.
 
 If you are not familiar with the architecture of a Django project or the model view template please read one of the following : https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django (english) or https://openclassrooms.com/courses/developpez-votre-site-web-avec-le-framework-django (french)
@@ -45,6 +47,7 @@ If you are not familiar with the architecture of a Django project or the model v
 
 
 #Database
+
 The database schema is defined in models.py.
 
 The main tables are Applicant, Position, Recruiter, Schedule, Skill, Match.
@@ -60,6 +63,7 @@ We have one to many links between :
 - Recruiter and Skill
 
 #Routing
+
 There are  different urls :
 -/recruitr/home
 -/recruitr/applicants : links for adding applicants, and to the list of applicants
@@ -69,13 +73,16 @@ There are  different urls :
 -/admin : Django admin, to administrate all the database
 
 #Forms 
+
 -RecruiterForm : Form with a selection of the recruiter (sorted in descending order of matching skills)
 -ScheduleForm : Form for interview schedule selection with jquery-datetimepicker
 
 #Admin.py
+
 Custom methods to redirect to add matches after adding applicant.
 
 #To do list
+
 -Check if recruiter is available before adding the event (easy : custom validation of the form)
 -Write tests
 - - - -
