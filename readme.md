@@ -5,20 +5,20 @@ The goal of this app is to help the recruitment process for a company and to man
 
 ## Quickstart
 
--pip install django, django-bower
--npm install bower
--pip install --upgrade google-api-python-client
+- pip install django, django-bower
+- npm install bower
+- pip install --upgrade google-api-python-client
 - ./manage.py bower install
 
--python manage.py runserver
+- python manage.py runserver
 
--open a new tab at localhost:8000/recruitr/home
+- open a new tab at localhost:8000/recruitr/home
 
--In a new terminal tab launch a server for checking the sent emails: 
+- In a new terminal tab launch a server for checking the sent emails: 
 python -m smtpd -n -c DebuggingServer localhost:1025
 
 ##Dependencies
--Django, Django-bower,bower,npm, jquery-datetimepicker,jquery, bootstrap, Google calendar api
+- Django, Django-bower,bower,npm, jquery-datetimepicker,jquery, bootstrap, Google calendar api
 
 ## Requirements
 
